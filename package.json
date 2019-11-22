@@ -1,0 +1,11 @@
+{
+  "name": "cypress-sample",
+  "version": "0.0.1",
+  "description": "Project to try Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yury Baykov",
+  "license": "ISC"
+}
