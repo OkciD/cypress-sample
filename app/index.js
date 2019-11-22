@@ -1,25 +1,18 @@
-(() => {
-	const input = document.querySelector('#input');
-	const button = document.querySelector('#button');
-	const list = document.querySelector('#list');
+'use strict';
 
-	if (!input || !button || !list) {
-		throw new Error('Insufficient page content');
-	}
+const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
 
-	button.addEventListener('click', () => {
-		const value = input.value;
+const staticDir = path.resolve(__dirname, 'static');
+const port = 8080;
 
-		if (!value) {
-			return;
-		}
+const app = express();
 
-		const listItem = document.createElement('li');
-		listItem.innerText = value;
-		listItem.setAttribute('data-test-id', `item:${value}`);
+app.use(morgan('dev'));
+app.use(express.static(staticDir));
 
-		list.appendChild(listItem);
 
-		input.value = '';
-	});
-})();
+app.listen(port, () => {
+	console.log(`Server started at http://localhost:${port}/`);
+});
