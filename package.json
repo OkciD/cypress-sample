@@ -2,8 +2,8 @@
   "name": "cypress-sample",
   "version": "0.0.1",
   "description": "Project to try Cypress",
-  "main": "index.js",
   "scripts": {
+    "start": "node ./app/index.js",
     "cypress:open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
