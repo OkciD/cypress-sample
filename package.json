@@ -4,14 +4,16 @@
   "description": "Project to try Cypress",
   "scripts": {
     "start": "node ./app/index.js",
-    "cypress:open": "cypress open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run -s 'cypress/integration/*_spec.js'",
+    "test": "start-server-and-test start http://localhost:8080 cy:run"
   },
   "author": "Yury Baykov",
   "license": "ISC",
   "dependencies": {
     "cypress": "3.6.1",
     "express": "4.17.1",
-    "morgan": "1.9.1"
+    "morgan": "1.9.1",
+    "start-server-and-test": "1.10.6"
   }
 }
