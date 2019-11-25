@@ -9,6 +9,7 @@ describe('Sample page', () => {
 
 	it('add elements to list on submit', () => {
 		cy.get('[data-test-id="input"]')
+			.as('input')
 			.type('kek')
 			.should('have.value', 'kek');
 
@@ -19,7 +20,7 @@ describe('Sample page', () => {
 			.children()
 			.contains('kek');
 
-		cy.get('[data-test-id="input"]')
+		cy.get('@input')
 			.should('not.have.value');
 	});
 });
